@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>歌曲列表</title>
+</head>
+<body>
+    <!--{{music}}-->
+    <table>
+        <tr>
+            <th>序号</th>
+            <th>歌名</th>
+            <th>图片</th>
+            <th>下载</th>
+        </tr>
+
+        {% for index,item in enumerate(music) %}
+            <tr>
+                <td>{{index}}</td>
+                <td>{{item['songinfo']['title']}}</td>
+                <td><img src="{{item['songinfo']['pic_small']}}" alt=""></td>
+                <td><a href="{{item['bitrate']['file_link']}}" download="download">下载</a></td>
+            </tr>
+        {% end %}
+
+    </table>
+
+</body>
+</html>

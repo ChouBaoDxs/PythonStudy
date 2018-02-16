@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>潭州python搜索引擎-最纯净的搜索引擎</title>
+	<link rel="stylesheet" href="static/css/common.css"/>
+	<script src="static/js/jquery.min.js"></script>
+	<link type="image/x-icon" href="http://tanzhoujiaoyu.com:80/official/resources/images/manager/favicon.ico" rel="shortcut icon">
+<meta name="baidu-tc-verification" content="0e0ba4b39b59e04ab691a5e50d5bd1b5" />
+</head>
+<body>
+	<div id="wrapper">
+		<div class="skinBg" style="background-image: url('static/images/65.jpg');"></div>
+		<header id="header">
+			<div class="weather fl">
+			  <div class="cityWeather">
+					
+				</div>
+		  </div>
+			<nav class="headNavs fr tr">
+
+			</nav>
+		</header>
+
+		<div class="content tc">
+			<p class="logo"><img width="146" height="38" src="static/images/logo_white.png" alt="logo" /></p>
+			<nav class="mainNavs"></nav>
+			<div class="searchBox">
+				<form action="/s" method="get">
+					<input type="text" class="searchIpt f14" name="wd" maxlength="100" autocomplete="off"/>
+					<input type="submit" class="btn cp" value="搜一下" />
+				</form>
+			</div>
+
+	  </div>
+
+		<footer id="footer" class="tc">©2016 无广告 还您一个纯净的搜索引擎</footer>
+	</div>
+		<div class="cnzz">
+			<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256413534'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/stat.php%3Fid%3D1256413534' type='text/javascript'%3E%3C/script%3E"));</script>
+		</div>
+	<script src="static/js/jquery.min.js"></script>
+	<script src="static/js/jquery.autocomplete.min.js"></script>
+	<script>
+		$('.uname,.topMenus').hover(function(){
+			$('.topMenus').stop(true,true).fadeIn(200);
+		},function(){
+			$('.topMenus').stop(true,true).delay(500).fadeOut(200);
+		});
+		
+		//搜索框自动补全; 
+		$('.searchIpt').AutoComplete({
+            'data': ['About Me', '审美网', 'abcdefg', 'One', 'Two', 'Three', 'Four', 'Five', 'Six','smwell.com', 'Seven', 'Eight', 'Nine', 'Ten', 'Eleven', 'Twelve','强子老师好帅','Qiangzi老师好帅'],
+            'itemHeight': 24,
+            'width': 529
+        }).AutoComplete('show');
+            
+		$('.ctnerTab a').click(function(){
+			if(!$(this).hasClass('on')){
+				$('.ctnerTab a').removeClass('on').eq($(this).index()).addClass('on');
+				$('.rtNavs').stop(true,true).hide(200).eq($(this).index()).show(300);
+			}
+		});
+		
+		$('.menusWrapper a').click(function(){
+			if(!$(this).hasClass('active')){
+				$('.menusWrapper a').removeClass('active').eq($(this).index()).addClass('active');
+				$('.cbox').stop(true,true).animate({top:318},100).hide().eq($(this).index()).animate({top:0},400).show();
+			}
+		});
+		
+		$('.smallPics a').click(function(){
+			if(!$(this).hasClass('active')){
+				$('.smallPics a').removeClass('active').eq($(this).index()).addClass('active');
+				$('.picLink').stop(true,true).removeClass('active').eq($(this).index()).addClass('active');
+			}
+		});
+				
+		$('.titleT').hover(function(){
+			if(!$(this).hasClass('on')){
+				$('.titleT').removeClass('on').eq($(this).index()).addClass('on');
+				$('.topicB').stop(true,true).hide().eq($(this).index()).show();
+			}
+		});
+	</script>
+</body>
+</html>
